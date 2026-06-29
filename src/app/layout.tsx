@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "VizDen Studio — Visions Unleashed",
+  title: "VizDen Studios",
   description:
     "Cinematic AI film studio. Cognitive storytelling. The cloud is the stage.",
 };
