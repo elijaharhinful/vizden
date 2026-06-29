@@ -2,6 +2,7 @@ import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { WorksGrid } from "@/components/site/works-grid";
 import { SiteFooter } from "@/components/site/footer";
+import { Reveal } from "@/components/motion/reveal";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           id="philosophy"
           className="border-t border-border bg-background py-28 sm:py-36"
         >
-          <div className="mx-auto max-w-4xl px-6 text-center sm:px-10">
+          <Reveal className="mx-auto max-w-4xl px-6 text-center sm:px-10">
             <p className="font-display text-xs font-semibold tracking-[0.35em] text-foreground/60">
               PHILOSOPHY
             </p>
@@ -25,7 +26,7 @@ export default function Home() {
                 We sit calmly upon its back.
               </span>
             </p>
-          </div>
+          </Reveal>
         </section>
         <SiteFooter />
       </main>

@@ -17,7 +17,7 @@ export type WorkCategory = {
 export const WHATSAPP_NUMBER = "233264525811";
 
 export function whatsappUrl(
-  message = "Hi VizDen Studio, I'd like to talk about a project.",
+  message = "Hi VizDen Studios, I'd like to talk about a project.",
 ): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }

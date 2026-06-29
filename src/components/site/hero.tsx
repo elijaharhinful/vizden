@@ -1,6 +1,25 @@
+"use client";
+
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { HERO_TAGLINES, HERO_VIDEO_URL, HERO_POSTER_URL } from "@/lib/content";
 
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export function Hero() {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="home"
@@ -9,7 +28,7 @@ export function Hero() {
       {/* Background: cinematic loop served from CDN. Poster shows until it loads,
           and is the sole frame when no video URL is configured. */}
       {HERO_VIDEO_URL ? (
-        <video
+        <motion.video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
@@ -17,15 +36,21 @@ export function Hero() {
           playsInline
           poster={HERO_POSTER_URL || undefined}
           src={HERO_VIDEO_URL}
+          initial={reduce ? false : { scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       ) : (
-        <div
+        <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: HERO_POSTER_URL
               ? `url(${HERO_POSTER_URL})`
               : "radial-gradient(120% 120% at 75% 30%, #2a2533 0%, #000 60%)",
           }}
+          initial={reduce ? false : { scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       )}
 
@@ -33,25 +58,33 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-10">
-        <p className="mb-6 font-display text-xs font-semibold tracking-[0.35em] text-foreground/70">
-          VIZDEN STUDIO
-        </p>
+      <motion.div
+        className="relative mx-auto w-full max-w-7xl px-6 sm:px-10"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         <h1 className="font-display text-6xl font-extrabold leading-[0.92] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
-          Visions
-          <br />
-          Unleashed
+          <motion.span variants={item} className="block">
+            Vizden
+          </motion.span>
+          <motion.span variants={item} className="block">
+            Studios
+          </motion.span>
         </h1>
 
-        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium tracking-[0.25em] text-foreground/70 sm:text-sm">
+        <motion.div
+          variants={item}
+          className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium tracking-[0.25em] text-foreground/70 sm:text-sm"
+        >
           {HERO_TAGLINES.map((line, i) => (
             <span key={line} className="flex items-center gap-4">
               {i > 0 && <span className="text-brand">/</span>}
               {line}
             </span>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { whatsappUrl } from "@/lib/content";
+import { Reveal } from "@/components/motion/reveal";
 
 export function SiteFooter() {
   return (
@@ -9,7 +10,7 @@ export function SiteFooter() {
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="flex flex-col items-start justify-between gap-12 md:flex-row md:items-end">
-          <div>
+          <Reveal>
             <p className="font-display text-xs font-semibold tracking-[0.35em] text-foreground/60">
               ENTER THE DEN
             </p>
@@ -26,7 +27,7 @@ export function SiteFooter() {
             >
               Message us on WhatsApp
             </a>
-          </div>
+          </Reveal>
 
           {/* Domitique — the tamed force. Placeholder mark until the vector lands. */}
           <div className="flex items-center gap-4 text-foreground/50">
@@ -45,7 +46,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-foreground/40 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} VizDen Studio. The cloud is the stage.</p>
+          <p>© {new Date().getFullYear()} VizDen Studios. The cloud is the stage.</p>
           <nav className="flex gap-6">
             <Link href="#home" className="hover:text-foreground">
               Home

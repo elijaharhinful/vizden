@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { NAV_ITEMS, whatsappUrl } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +32,12 @@ export function SiteNav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <motion.header
+      className="fixed inset-x-0 top-0 z-50"
+      initial={{ opacity: 0, y: -16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10">
         <Link
           href="#home"
@@ -80,6 +86,6 @@ export function SiteNav() {
           Enter the Den
         </a>
       </nav>
-    </header>
+    </motion.header>
   );
 }

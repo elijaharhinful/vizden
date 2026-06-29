@@ -1,4 +1,14 @@
+"use client";
+
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "motion/react";
 import { WORK_CATEGORIES, type WorkCategory } from "@/lib/content";
+import { Reveal } from "@/components/motion/reveal";
 
 const FILTERS = ["ALL", "AEVUM", "EPISODIC", "KINETIC", "ZEITGEIST"] as const;
 
@@ -6,24 +16,46 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
   // Stagger the right column downward, like the sample's offset masonry feel.
   const offset = index % 2 === 1 ? "lg:mt-32" : "";
 
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  // Track this card's pass through the viewport, drift the image against scroll.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  // Right column drifts a touch harder for depth between the two columns.
+  const range = index % 2 === 1 ? "12%" : "9%";
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduce ? ["0%", "0%"] : [`-${range}`, range],
+  );
+
   return (
     // Padded gutters give the title room to bleed left and the button to bleed
     // right past the image frame — the sample's broken-frame editorial look.
-    <article className={`group relative px-5 sm:px-8 ${offset}`}>
+    <article
+      ref={ref}
+      className={`group relative px-5 transition-transform duration-500 hover:-translate-y-1.5 sm:px-8 ${offset}`}
+    >
       {/* Image frame: the only clipped element, so overlays can escape it. */}
       <div className="relative aspect-3/4 overflow-hidden">
-        {work.poster ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={work.poster}
-            alt={work.title}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-        ) : (
-          <div
-            className={`h-full w-full ${work.placeholder} transition-transform duration-700 group-hover:scale-105`}
-          />
-        )}
+        {/* Oversized parallax layer: taller than the frame so the scroll drift
+            never exposes an edge. */}
+        <motion.div style={{ y }} className="absolute inset-x-0 inset-y-[-14%]">
+          {work.poster ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={work.poster}
+              alt={work.title}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div
+              className={`h-full w-full ${work.placeholder} transition-transform duration-700 group-hover:scale-105`}
+            />
+          )}
+        </motion.div>
         {/* Soft, localized scrim for legibility — far lighter than a full overlay. */}
         <div className="absolute inset-0 bg-linear-to-tr from-black/55 via-transparent to-transparent" />
       </div>
@@ -65,7 +97,7 @@ export function WorksGrid() {
       </p>
 
       {/* Category filter row — echoes the sample's ALL / BRANDING / ... tabs. */}
-      <div className="mx-auto mb-16 flex flex-wrap justify-center gap-x-8 gap-y-3 px-6 text-[11px] font-medium tracking-[0.2em]">
+      <Reveal className="mx-auto mb-16 flex flex-wrap justify-center gap-x-8 gap-y-3 px-6 text-[11px] font-medium tracking-[0.2em]">
         {FILTERS.map((f, i) => (
           <button
             key={f}
@@ -82,12 +114,14 @@ export function WorksGrid() {
             )}
           </button>
         ))}
-      </div>
+      </Reveal>
 
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid grid-cols-1 items-start gap-x-16 gap-y-20 lg:grid-cols-2">
           {WORK_CATEGORIES.map((work, i) => (
-            <WorkCard key={work.slug} work={work} index={i} />
+            <Reveal key={work.slug} delay={(i % 2) * 0.1} y={40}>
+              <WorkCard work={work} index={i} />
+            </Reveal>
           ))}
         </div>
       </div>
