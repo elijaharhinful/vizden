@@ -24,6 +24,12 @@
 .DS_Store
 *.pem
 
+# design screenshot scratch output
+/screenshots/
+
+# codegraph local index (regenerate with `codegraph init`)
+/.codegraph/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
