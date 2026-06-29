@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { whatsappUrl } from "@/lib/content";
 import { Reveal } from "@/components/motion/reveal";
 
@@ -29,14 +30,15 @@ export function SiteFooter() {
             </a>
           </Reveal>
 
-          {/* Domitique — the tamed force. Placeholder mark until the vector lands. */}
-          <div className="flex items-center gap-4 text-foreground/50">
-            <span
-              aria-hidden
-              className="grid h-12 w-12 place-items-center rounded-full border border-border font-display text-lg font-bold"
-            >
-              D
-            </span>
+          {/* Domitique — the tamed force: the coder riding the lion. */}
+          <div className="flex items-center gap-5 text-foreground/50">
+            <Image
+              src="/logos/vizden-logo-white.png"
+              alt="VizDen Studios — Domitique"
+              width={141}
+              height={100}
+              className="h-20 w-auto"
+            />
             <span className="text-xs leading-relaxed tracking-wide">
               Domitique
               <br />

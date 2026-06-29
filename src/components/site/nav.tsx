@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { NAV_ITEMS, whatsappUrl } from "@/lib/content";
@@ -39,11 +40,15 @@ export function SiteNav() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10">
-        <Link
-          href="#home"
-          className="font-display text-xl font-extrabold tracking-tight"
-        >
-          <span className="text-brand">/</span> VizDen
+        <Link href="#home" aria-label="VizDen Studios — home">
+          <Image
+            src="/logos/vizden-logo-white.png"
+            alt="VizDen Studios"
+            width={71}
+            height={50}
+            priority
+            className="h-11 w-auto"
+          />
         </Link>
 
         <ul className="hidden items-center gap-9 text-sm md:flex">
