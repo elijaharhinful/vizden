@@ -7,11 +7,16 @@ export type WorkCategory = {
   title: string;
   kicker: string; // small tracked-caps label, e.g. "AEVUM, NEURAL RENDER"
   concept: string;
+  /** CDN loop video URL (muted autoplay). Falls back to poster/gradient. */
+  video?: string;
   /** CDN poster image URL. Falls back to a gradient when empty. */
   poster?: string;
-  /** Tailwind gradient classes used as a placeholder until a poster is set. */
+  /** Tailwind gradient classes used as a placeholder until media is set. */
   placeholder: string;
 };
+
+// Work-section clips, served from the Cloudflare R2 bucket (custom domain).
+const VIDEO_BASE = "https://media.vizdenstudios.com/videos";
 
 // Contact runs through WhatsApp. Number digits only (no + or spaces).
 export const WHATSAPP_NUMBER = "233264525811";
@@ -46,6 +51,7 @@ export const WORK_CATEGORIES: WorkCategory[] = [
     kicker: "LEGACY FILMS, NEURAL RENDER",
     concept:
       "Legacy-preservation films. Advanced neural rendering reconstructs the likeness of departed loved ones, visualizing their transition into eternal spheres — personal memory turned into a cinematic sanctuary.",
+    video: `${VIDEO_BASE}/Aevum_snippet.mp4`,
     placeholder: "bg-gradient-to-br from-indigo-900 via-violet-800 to-sky-700",
   },
   {
@@ -54,6 +60,7 @@ export const WORK_CATEGORIES: WorkCategory[] = [
     kicker: "AD-CINEMA, SERIALIZED WORLDS",
     concept:
       "Brand building through serialized cinematic worlds. We construct recurring characters and mythological narratives around corporate identities, turning consumers into viewers who wait for the next episode.",
+    video: `${VIDEO_BASE}/episodic_snippet.mp4`,
     placeholder: "bg-gradient-to-br from-amber-700 via-orange-800 to-rose-900",
   },
   {
@@ -62,6 +69,7 @@ export const WORK_CATEGORIES: WorkCategory[] = [
     kicker: "BRAND COMMERCIALS, HIGH-CONTRAST",
     concept:
       "Laser-focused, visually arresting promotional spots — highly stylized, high-contrast commercials engineered to stop the scrolling finger and embed a product's essence in the subconscious.",
+    video: `${VIDEO_BASE}/Kinetic_snippet.mp4`,
     placeholder: "bg-gradient-to-br from-rose-800 via-red-900 to-zinc-900",
   },
   {
@@ -70,6 +78,7 @@ export const WORK_CATEGORIES: WorkCategory[] = [
     kicker: "CULTURAL, SEASONAL EVENTS",
     concept:
       "Capturing cultural momentum. Narrative experiences that tap into the collective aura of global celebrations and seasons, anchoring your brand to the heart of the event.",
+    video: `${VIDEO_BASE}/zeitgeist_snippet.mp4`,
     placeholder: "bg-gradient-to-br from-teal-800 via-slate-700 to-blue-900",
   },
 ];

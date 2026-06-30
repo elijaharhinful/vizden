@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   motion,
   useScroll,
@@ -17,6 +17,7 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
   const offset = index % 2 === 1 ? "lg:mt-32" : "";
 
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
   // Track this card's pass through the viewport, drift the image against scroll.
   const { scrollYProgress } = useScroll({
@@ -31,6 +32,26 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
     reduce ? ["0%", "0%"] : [`-${range}`, range],
   );
 
+  // Only play the clip while the card is on screen — saves bandwidth and
+  // avoids four videos decoding at once.
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = true; // enforce muted so autoplay is allowed
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.play().catch(() => {});
+        } else {
+          el.pause();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     // Padded gutters give the title room to bleed left and the button to bleed
     // right past the image frame — the sample's broken-frame editorial look.
@@ -43,7 +64,18 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
         {/* Oversized parallax layer: taller than the frame so the scroll drift
             never exposes an edge. */}
         <motion.div style={{ y }} className="absolute inset-x-0 inset-y-[-14%]">
-          {work.poster ? (
+          {work.video ? (
+            <video
+              ref={videoRef}
+              src={work.video}
+              poster={work.poster}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : work.poster ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={work.poster}
