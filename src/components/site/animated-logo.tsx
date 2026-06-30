@@ -13,7 +13,7 @@ export function AnimatedLogo() {
         alt="VizDen Studios - Domitique"
         width={141}
         height={100}
-        className="h-60 w-auto"
+        className="sm:h-60 h-50 w-auto"
       />
     );
   }
@@ -27,7 +27,7 @@ export function AnimatedLogo() {
       playsInline
       poster="/logos/vizden-logo-white.png"
       src="/animations/vizden-logo-font.webm"
-      className="h-60 w-auto"
+      className="sm:h-60 h-50 w-auto"
     />
   );
 }

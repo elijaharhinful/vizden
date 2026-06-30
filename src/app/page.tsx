@@ -1,6 +1,7 @@
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { WorksGrid } from "@/components/site/works-grid";
+import { PhilosophyText } from "@/components/site/philosophy-text";
 import { SiteFooter } from "@/components/site/footer";
 import { Reveal } from "@/components/motion/reveal";
 import { StructuredData } from "@/components/seo/structured-data";
@@ -21,13 +22,7 @@ export default function Home() {
             <p className="font-display text-xs font-semibold tracking-[0.35em] text-foreground/60">
               PHILOSOPHY
             </p>
-            <p className="mt-8 font-display text-2xl font-semibold leading-snug sm:text-4xl">
-              The lion is the terrifying reality of grand, budget-guzzling ideas
-              that scare production teams into playing safe.{" "}
-              <span className="text-brand">
-                We sit calmly upon its back.
-              </span>
-            </p>
+            <PhilosophyText />
           </Reveal>
         </section>
         <SiteFooter />

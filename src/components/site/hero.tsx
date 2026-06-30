@@ -55,8 +55,8 @@ export function Hero() {
       )}
 
       {/* Legibility overlays: darken left for text, vignette the edges. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/40" />
 
       {!reduce && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 overflow-hidden">

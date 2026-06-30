@@ -16,9 +16,9 @@ export function SiteFooter() {
               ENTER THE DEN
             </p>
             <h2 className="mt-4 max-w-xl font-display text-4xl font-extrabold leading-tight sm:text-5xl">
-              We ride outrageous ideas.
+              Impossible is now on the table.
               <br />
-              We do not fear them.
+              Tame your ideas here.
             </h2>
             <a
               href={whatsappUrl()}
@@ -30,10 +30,10 @@ export function SiteFooter() {
             </a>
           </Reveal>
 
-          {/* Domitique — the tamed force: the coder riding the lion. */}
+          {/* Domitique - the tamed force: the coder riding the lion. */}
           <div className="flex items-center gap-5 text-foreground/50">
             <AnimatedLogo />
-            <span className="text-xs leading-relaxed tracking-wide">
+            <span className="text-xs leading-relaxed tracking-wide mt-18 sm:mt-20">
               Domitique
               <br />
               The Tamed Force
