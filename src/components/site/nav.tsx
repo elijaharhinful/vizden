@@ -61,7 +61,7 @@ export function SiteNav() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10">
-        <Link href="#home" aria-label="VizDen Studios — home">
+        <Link href="/#home" aria-label="VizDen Studios — home">
           <Image
             src="/logos/vizden-logo-white.png"
             alt="VizDen Studios"
@@ -141,7 +141,7 @@ export function SiteNav() {
           >
             <div className="flex items-center justify-between px-6 py-6">
               <Link
-                href="#home"
+                href="/#home"
                 aria-label="VizDen Studios — home"
                 onClick={() => setMenuOpen(false)}
               >
