@@ -57,7 +57,7 @@ export default function OpengraphImage() {
             }}
           >
             {SITE.tagline}
-            <span style={{ color: "#e11d48" }}>/</span> AI FILM STUDIO
+            <span style={{ color: "#0168dd" }}>/</span> AI FILM STUDIO
           </div>
         </div>
       </div>
