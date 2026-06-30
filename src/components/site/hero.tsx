@@ -58,6 +58,26 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
 
+      {!reduce && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 overflow-hidden">
+          <motion.div
+            className="absolute bottom-0"
+            initial={{ x: "-20vw" }}
+            animate={{ x: "110vw" }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              src="/animations/no-bg-lion.webm"
+              className="h-28 w-auto"
+            />
+          </motion.div>
+        </div>
+      )}
+
       <motion.div
         className="relative mx-auto w-full max-w-7xl px-6 sm:px-10"
         variants={container}
