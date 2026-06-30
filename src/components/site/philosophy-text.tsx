@@ -18,7 +18,7 @@ export function PhilosophyText() {
         used to terrify traditional studios into submission are the very ones we
         ride into battle. We have embraced our sovereignty. We tame the beasts.{" "}
         <br />
-        <span className="text-brand">
+        <span className="text-brand font-semibold">
           Welcome to the Den. Today, we ride the lion.
         </span>
       </span>
