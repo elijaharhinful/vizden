@@ -87,9 +87,10 @@ export const HERO_TAGLINES = [
   "THE CLOUD IS THE STAGE",
 ] as const;
 
-/** Hero background video, served from a CDN (see .env.example). */
-export const HERO_VIDEO_URL = process.env.NEXT_PUBLIC_HERO_VIDEO_URL ?? "";
-export const HERO_POSTER_URL = process.env.NEXT_PUBLIC_HERO_POSTER_URL ?? "";
+/** Hero background video, served from the same CDN as the category clips. */
+export const HERO_VIDEO_URL = `${VIDEO_BASE}/WEBSITE%20HEADER_3k_720p.mp4`;
+/** Poster frame shown before the video loads. Empty = none yet. */
+export const HERO_POSTER_URL = "";
 
 export const WORK_CATEGORIES: WorkCategory[] = [
   {
