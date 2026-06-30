@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { SiteNav } from "@/components/site/nav";
 import { WorksWatch } from "@/components/site/works-watch";
 import { SiteFooter } from "@/components/site/footer";
@@ -22,7 +23,9 @@ export default function WorksPage() {
     <>
       <SiteNav />
       <main className="flex-1">
-        <WorksWatch />
+        <Suspense>
+          <WorksWatch />
+        </Suspense>
       </main>
       <SiteFooter />
     </>

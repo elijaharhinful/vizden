@@ -1,15 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import {
-  ThumbsUp,
-  Share2,
-  Download,
-  Bookmark,
-  Check,
-  Play,
-} from "lucide-react";
+import { ThumbsUp, Share2, Check, Play } from "lucide-react";
 import { WORK_CATEGORIES, whatsappUrl, type WorkCategory } from "@/lib/content";
 import { Reveal } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
@@ -38,7 +32,16 @@ function Thumbnail({ work }: { work: WorkCategory }) {
 }
 
 export function WorksWatch() {
-  const [activeSlug, setActiveSlug] = useState(WORK_CATEGORIES[0].slug);
+  // The active clip is driven by /works?v=<slug> (set by the homepage cards and
+  // the rail), so it is shareable and the back button works.
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const requested = searchParams.get("v");
+  const activeSlug =
+    requested && WORK_CATEGORIES.some((w) => w.slug === requested)
+      ? requested
+      : WORK_CATEGORIES[0].slug;
+
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -47,7 +50,7 @@ export function WorksWatch() {
   const queue = WORK_CATEGORIES.filter((w) => w.slug !== active.slug);
 
   function selectWork(slug: string) {
-    setActiveSlug(slug);
+    router.push(`/works?v=${slug}`, { scroll: false });
     setExpanded(false);
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });

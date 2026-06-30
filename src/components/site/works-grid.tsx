@@ -91,6 +91,14 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
         <div className="absolute inset-0 bg-linear-to-tr from-black/55 via-transparent to-transparent" />
       </div>
 
+      {/* Whole card opens this clip on the watch page. Sits above the title so
+          tapping anywhere navigates; the EXPLORE pill is lifted above it. */}
+      <Link
+        href={`/works?v=${work.slug}`}
+        aria-label={`Watch ${work.title}`}
+        className="absolute inset-0 z-10"
+      />
+
       {/* Title bleeds left past the frame, sitting around mid-height. */}
       <div className="absolute left-0 top-[42%] right-8 -translate-y-1/2">
         <h3 className="font-display text-4xl font-bold leading-[0.95] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] sm:text-5xl">
@@ -105,10 +113,10 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
       </div>
 
       {/* EXPLORE pill straddles the frame's bottom-right, connector line leading in. */}
-      <div className="absolute bottom-10 right-0 flex items-center">
+      <div className="absolute bottom-10 right-0 z-20 flex items-center">
         <span className="h-px w-10 bg-foreground/40 sm:w-14" />
         <Link
-          href="/works"
+          href={`/works?v=${work.slug}`}
           className="border border-foreground/40 px-5 py-2.5 text-[11px] font-medium tracking-[0.25em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
         >
           EXPLORE
@@ -142,9 +150,9 @@ export function WorksGrid() {
         <Reveal className="mt-24 flex justify-center">
           <Link
             href="/works"
-            className="group inline-flex items-center gap-4 border border-foreground/40 px-8 py-4 text-xs font-medium tracking-[0.3em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
+            className="group inline-flex items-center gap-4 whitespace-nowrap border border-foreground/40 px-6 py-4 text-xs font-medium tracking-[0.2em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground sm:px-8 sm:tracking-[0.3em]"
           >
-            ENTER THE SCREENING ROOM
+            THE SCREENING ROOM
           </Link>
         </Reveal>
       </div>
