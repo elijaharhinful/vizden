@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 import { NAV_ITEMS, whatsappUrl } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,22 @@ const SECTION_IDS = NAV_ITEMS.filter(
 export function SiteNav() {
   const pathname = usePathname();
   const [active, setActive] = useState(SECTION_IDS[0]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Lock body scroll and allow Esc to close while the mobile menu is open.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = overflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     // Mark a section active once it crosses roughly the middle of the viewport.
@@ -95,13 +112,99 @@ export function SiteNav() {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "border border-brand px-5 py-2 text-sm font-medium text-foreground",
+            "hidden border border-brand px-5 py-2 text-sm font-medium text-foreground md:inline-block",
             "transition-colors hover:bg-brand hover:text-brand-foreground",
           )}
         >
           Enter the Den
         </a>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={menuOpen}
+          className="text-foreground/90 transition-colors hover:text-foreground md:hidden"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
       </nav>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur-md md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className="flex items-center justify-between px-6 py-6">
+              <Link
+                href="#home"
+                aria-label="VizDen Studios — home"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Image
+                  src="/logos/vizden-logo-white.png"
+                  alt="VizDen Studios"
+                  width={71}
+                  height={50}
+                  className="h-11 w-auto"
+                />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+                className="text-foreground/90 transition-colors hover:text-foreground"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            <nav className="flex flex-1 flex-col items-center justify-center gap-8">
+              {NAV_ITEMS.filter((i) => !("cta" in i && i.cta)).map((item) => {
+                const sectionId = item.href.includes("#")
+                  ? item.href.split("#")[1]
+                  : null;
+                const isActive = sectionId
+                  ? pathname === "/" && active === sectionId
+                  : pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "text-2xl font-medium transition-colors",
+                      isActive
+                        ? "text-foreground"
+                        : "text-foreground/70 hover:text-foreground",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className={cn(
+                  "mt-4 border border-brand px-7 py-3 text-base font-medium text-foreground",
+                  "transition-colors hover:bg-brand hover:text-brand-foreground",
+                )}
+              >
+                Enter the Den
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
