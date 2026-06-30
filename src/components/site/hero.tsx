@@ -73,6 +73,15 @@ export function Hero() {
           </motion.span>
         </h1>
 
+        {/* Crawler/screen-reader supporting copy — keeps the visual hero minimal
+            while giving search engines real, keyword-relevant text. */}
+        <p className="sr-only">
+          VizDen Studios is an AI film studio producing cinematic AI videos,
+          commercials, brand mini-series, serialized ad-cinema and memorial
+          tribute films. We blend generative video, neural rendering and
+          cognitive storytelling for brands across Africa and worldwide.
+        </p>
+
         <motion.div
           variants={item}
           className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium tracking-[0.25em] text-foreground/70 sm:text-sm"

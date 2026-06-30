@@ -101,6 +101,8 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
           <span className="h-px w-6 bg-brand" />
           {work.kicker}
         </p>
+        {/* Crawlable, accessible description — no visual change. */}
+        <p className="sr-only">{work.concept}</p>
       </div>
 
       {/* EXPLORE pill straddles the frame's bottom-right, connector line leading in. */}

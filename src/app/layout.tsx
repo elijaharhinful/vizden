@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { QueryProvider } from "@/components/providers/query-provider";
+import { SITE, SEO_KEYWORDS } from "@/lib/content";
 
 // Futura LT (self-hosted) — the massive titles and bold headings.
 const futura = localFont({
@@ -22,9 +23,45 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "VizDen Studios",
-  description:
-    "Cinematic AI film studio. Cognitive storytelling. The cloud is the stage.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name} - AI Film Studio & Cinematic AI Video Production`,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
+  keywords: [...SEO_KEYWORDS],
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: "Film & Video Production",
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    url: "/",
+    title: `${SITE.name} - AI Film Studio`,
+    description: SITE.description,
+    locale: SITE.locale,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} - AI Film Studio`,
+    description: SITE.description,
+  },
+  // Filled after Google Search Console verification (DNS TXT is the alternative).
+  // verification: { google: "<token>" },
 };
 
 export default function RootLayout({

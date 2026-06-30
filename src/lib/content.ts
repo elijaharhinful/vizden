@@ -15,6 +15,53 @@ export type WorkCategory = {
   placeholder: string;
 };
 
+// Canonical site facts, reused by metadata, structured data and OG images.
+export const SITE = {
+  name: "VizDen Studios",
+  shortName: "VizDen",
+  url: "https://www.vizdenstudios.com",
+  tagline: "Visions Unleashed",
+  description:
+    "VizDen Studios is an AI film studio crafting cinematic videos, commercials, brand mini-series and memorial tribute films. Cognitive storytelling for Africa and the world.",
+  logo: "https://www.vizdenstudios.com/logos/vizden-logo-white.png",
+  locale: "en_US",
+  // Social profiles for structured-data `sameAs`. Empty until accounts exist.
+  social: [] as string[],
+} as const;
+
+// Search terms we want to rank for. Brand + service/category + use-case + reach.
+export const SEO_KEYWORDS = [
+  "VizDen",
+  "VizDen Studios",
+  "AI film studio",
+  "AI video production",
+  "AI movie studio",
+  "cinematic AI video",
+  "AI commercials",
+  "AI advertising",
+  "generative video",
+  "AI filmmaking",
+  "neural rendering",
+  "video production studio",
+  "creative studio",
+  "brand films",
+  "brand mini-series",
+  "serialized content",
+  "episodic content",
+  "promotional commercials",
+  "product ads",
+  "memorial tribute films",
+  "legacy films",
+  "seasonal campaigns",
+  "cultural campaigns",
+  "motion graphics",
+  "music videos",
+  "corporate videos",
+  "social media video content",
+  "film studio Africa",
+  "AI film studio worldwide",
+] as const;
+
 // Work-section clips, served from the Cloudflare R2 bucket (custom domain).
 const VIDEO_BASE = "https://media.vizdenstudios.com/videos";
 

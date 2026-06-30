@@ -3,10 +3,12 @@ import { Hero } from "@/components/site/hero";
 import { WorksGrid } from "@/components/site/works-grid";
 import { SiteFooter } from "@/components/site/footer";
 import { Reveal } from "@/components/motion/reveal";
+import { StructuredData } from "@/components/seo/structured-data";
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <SiteNav />
       <main className="flex-1">
         <Hero />
