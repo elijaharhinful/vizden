@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { NAV_ITEMS, whatsappUrl } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-const SECTION_IDS = NAV_ITEMS.filter((i) => !("cta" in i && i.cta)).map((i) =>
-  i.href.replace("#", ""),
-);
+// Hash nav items only (Works is now a real route, not a section). Ids are the
+// part after the "#", e.g. "/#home" -> "home".
+const SECTION_IDS = NAV_ITEMS.filter(
+  (i) => !("cta" in i && i.cta) && i.href.includes("#"),
+).map((i) => i.href.split("#")[1]);
 
 export function SiteNav() {
+  const pathname = usePathname();
   const [active, setActive] = useState(SECTION_IDS[0]);
 
   useEffect(() => {
@@ -53,7 +57,14 @@ export function SiteNav() {
 
         <ul className="hidden items-center gap-9 text-sm md:flex">
           {NAV_ITEMS.filter((i) => !("cta" in i && i.cta)).map((item) => {
-            const isActive = active === item.href.replace("#", "");
+            // Hash links are active via scroll-spy on the homepage; route links
+            // (Works) are active when the pathname matches.
+            const sectionId = item.href.includes("#")
+              ? item.href.split("#")[1]
+              : null;
+            const isActive = sectionId
+              ? pathname === "/" && active === sectionId
+              : pathname === item.href;
             return (
               <li key={item.href}>
                 <Link

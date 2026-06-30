@@ -44,13 +44,13 @@ export function SiteFooter() {
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-foreground/40 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} VizDen Studios. The cloud is the stage.</p>
           <nav className="flex gap-6">
-            <Link href="#home" className="hover:text-foreground">
+            <Link href="/#home" className="hover:text-foreground">
               Home
             </Link>
-            <Link href="#works" className="hover:text-foreground">
+            <Link href="/works" className="hover:text-foreground">
               Works
             </Link>
-            <Link href="#philosophy" className="hover:text-foreground">
+            <Link href="/#philosophy" className="hover:text-foreground">
               Philosophy
             </Link>
           </nav>

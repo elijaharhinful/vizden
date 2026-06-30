@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import {
   motion,
@@ -9,8 +10,6 @@ import {
 } from "motion/react";
 import { WORK_CATEGORIES, type WorkCategory } from "@/lib/content";
 import { Reveal } from "@/components/motion/reveal";
-
-const FILTERS = ["ALL", "AEVUM", "EPISODIC", "KINETIC", "ZEITGEIST"] as const;
 
 function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
   // Stagger the right column downward, like the sample's offset masonry feel.
@@ -108,12 +107,12 @@ function WorkCard({ work, index }: { work: WorkCategory; index: number }) {
       {/* EXPLORE pill straddles the frame's bottom-right, connector line leading in. */}
       <div className="absolute bottom-10 right-0 flex items-center">
         <span className="h-px w-10 bg-foreground/40 sm:w-14" />
-        <button
-          type="button"
+        <Link
+          href="/works"
           className="border border-foreground/40 px-5 py-2.5 text-[11px] font-medium tracking-[0.25em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
         >
           EXPLORE
-        </button>
+        </Link>
       </div>
     </article>
   );
@@ -125,30 +124,10 @@ export function WorksGrid() {
       {/* Oversized watermark, echoing the sample's ghosted "Portfolio". */}
       <p
         aria-hidden
-        className="pointer-events-none select-none px-6 text-center font-display text-6xl font-extrabold tracking-tight text-foreground/6 sm:text-8xl lg:text-9xl"
+        className="pointer-events-none select-none px-6 text-center font-display text-6xl font-extrabold tracking-tight text-foreground/6 sm:text-8xl lg:text-9xl mb-16"
       >
         Works
       </p>
-
-      {/* Category filter row — echoes the sample's ALL / BRANDING / ... tabs. */}
-      <Reveal className="mx-auto mb-16 flex flex-wrap justify-center gap-x-8 gap-y-3 px-6 text-[11px] font-medium tracking-[0.2em]">
-        {FILTERS.map((f, i) => (
-          <button
-            key={f}
-            type="button"
-            className={
-              i === 0
-                ? "relative text-brand"
-                : "text-foreground/55 transition-colors hover:text-foreground"
-            }
-          >
-            {f}
-            {i === 0 && (
-              <span className="absolute -bottom-2 left-0 h-px w-full bg-brand" />
-            )}
-          </button>
-        ))}
-      </Reveal>
 
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid grid-cols-1 items-start gap-x-16 gap-y-20 lg:grid-cols-2">
@@ -158,6 +137,16 @@ export function WorksGrid() {
             </Reveal>
           ))}
         </div>
+
+        {/* Lead into the full screening room (the YouTube-style /works page). */}
+        <Reveal className="mt-24 flex justify-center">
+          <Link
+            href="/works"
+            className="group inline-flex items-center gap-4 border border-foreground/40 px-8 py-4 text-xs font-medium tracking-[0.3em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground"
+          >
+            ENTER THE SCREENING ROOM
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

@@ -74,11 +74,13 @@ export function whatsappUrl(
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+// Root-absolute hrefs so hash links work from any route (e.g. the /works page),
+// and "Works" navigates to its dedicated screening-room page.
 export const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Works", href: "#works" },
-  { label: "Philosophy", href: "#philosophy" },
-  { label: "Enter the Den", href: "#enter", cta: true },
+  { label: "Home", href: "/#home" },
+  { label: "Works", href: "/works" },
+  { label: "Philosophy", href: "/#philosophy" },
+  { label: "Enter the Den", href: "/#enter", cta: true },
 ] as const;
 
 export const HERO_TAGLINES = [
