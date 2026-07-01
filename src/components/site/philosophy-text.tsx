@@ -10,14 +10,16 @@ export function PhilosophyText() {
   return (
     <p className="mt-8 font-display leading-snug sm:text-2xl">
       Ideas are not born equal. Some are cute bunnies, and others, raging dragons.
-      For a century, the gatekeepers forced us to play safe because we couldn’t
-      afford to feed the beasts. No more.{" "}
+      For a century, the gatekeepers forced artists to play safe because we couldn’t
+      afford to feed the beasts. No more. {" "}
       <span className={expanded ? "inline" : "hidden sm:inline"}>
-        The cloud has melted our chains. AI has supercharged our talents,
-        crowning us absolute rulers of our own imagination. The concepts that
-        used to terrify traditional studios into submission are the very ones we
-        ride into battle. We have embraced our sovereignty. We tame the beasts.{" "}
-        <br />
+      The cloud has melted our chains. AI has supercharged our talents 
+      and crowned us absolute rulers of our own imagination. 
+      The monstrous concepts that once terrified the independent 
+      dreamer - for fear of budgets, time, and labor - are the very 
+      ones we now espouse. We have embraced our sovereignty. 
+      We tame the beasts.
+      <br />
         <span className="text-brand font-semibold">
           Welcome to the Den. Today, we ride the lion.
         </span>
