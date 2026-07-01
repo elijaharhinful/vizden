@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { WorksGrid } from "@/components/site/works-grid";
@@ -26,6 +27,14 @@ export default function Home() {
               Philosophy
             </p>
             <PhilosophyText />
+            <div className="mt-12 flex justify-center">
+              <Link
+                href="/philosophy"
+                className="group inline-flex items-center gap-4 whitespace-nowrap border border-foreground/40 px-6 py-4 text-xs font-medium tracking-[0.2em] text-foreground transition-colors hover:border-brand hover:bg-brand hover:text-brand-foreground sm:px-8 sm:tracking-[0.3em]"
+              >
+                THE FULL DOCTRINE
+              </Link>
+            </div>
           </Reveal>
         </section>
         <SiteFooter />

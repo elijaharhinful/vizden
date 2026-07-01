@@ -79,7 +79,7 @@ export function whatsappUrl(
 export const NAV_ITEMS = [
   { label: "Home", href: "/#home" },
   { label: "Works", href: "/works" },
-  { label: "Philosophy", href: "/#philosophy" },
+  { label: "Philosophy", href: "/philosophy" },
   { label: "Enter the Den", href: "/#enter", cta: true },
 ] as const;
 
@@ -130,5 +130,45 @@ export const WORK_CATEGORIES: WorkCategory[] = [
       "Capturing cultural momentum. Narrative experiences that tap into the collective aura of global celebrations and seasons, anchoring your brand to the heart of the event.",
     video: `${VIDEO_BASE}/zeitgeist_snippet.mp4`,
     placeholder: "bg-gradient-to-br from-teal-800 via-slate-700 to-blue-900",
+  },
+];
+
+// Philosophy page chapters.
+export type PhilosophyChapter = {
+  id: string;
+  index: string; // tracked numeral eyebrow, e.g. "01"
+  title: string;
+  body: string;
+  video: string;
+  side: "left" | "right";
+  /** Closing lines rendered under the last chapter's passage. */
+  coda?: string[];
+};
+
+export const PHILOSOPHY_CHAPTERS: PhilosophyChapter[] = [
+  {
+    id: "the-great-domestication",
+    index: "01",
+    title: "The Great Domestication",
+    body: "Ideas are not born equal. Some are born as harmless bunnies; small, safe, and easily handled. Others are primal tempests, raging dragons! For a century, legacy filmmaking made it impossible for the average creator to subdue the predators. These boisterous, dangerous ideas couldn’t simply be put behind bars or turned off. Instead, they remained trapped, untamed, and burning to make it to the big screen, locked in an intangible section of the creative mind. No one dared to unlock them because without a studio backing you with millions of dollars, you had no way to tame them once unleashed. The old system forced artists to starve their creative rage, policing their own minds to only play with the safe, quiet bunnies they could actually afford to feed. No more.",
+    video: `${VIDEO_BASE}/1.%20the%20great%20dom.mp4`,
+    side: "left",
+  },
+  {
+    id: "the-revolution",
+    index: "02",
+    title: "The Revolution",
+    body: "The confinements of capital, time, and physical labor have been dissolved. By putting decentralized cloud networks and cutting-edge visual AI at the absolute center of our workflow, VizDen Studio has shattered the barrier to producing tangible ideas. What used to demand a hundred-man crew and a disastrous corporate budget is now conquered by a bunch of storytellers, digital artists, and keyboards. It is a win for imagination. We have ascended.",
+    video: `${VIDEO_BASE}/2.%20THe%20revolution.mp4`,
+    side: "right",
+  },
+  {
+    id: "enter-the-den",
+    index: "03",
+    title: "Enter the Den",
+    body: "This is our home now. We have reclaimed our sovereignty. The monstrous concepts that once terrified the independent dreamer - for fear of budgets, time, and labor - are the very ones we now espouse. We don’t just handle these wild beasts; we tame them, pet them, and ride them victoriously to the screen.",
+    video: `${VIDEO_BASE}/2.%20THe%20revolution.mp4`,
+    side: "left",
+    coda: ["We are VizDen Studio.", "We ride the lion."],
   },
 ];

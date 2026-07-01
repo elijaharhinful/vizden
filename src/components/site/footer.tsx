@@ -50,7 +50,7 @@ export function SiteFooter() {
             <Link href="/works" className="hover:text-foreground">
               Works
             </Link>
-            <Link href="/#philosophy" className="hover:text-foreground">
+            <Link href="/philosophy" className="hover:text-foreground">
               Philosophy
             </Link>
           </nav>
