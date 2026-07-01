@@ -165,8 +165,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-indigo-900 via-violet-800 to-sky-700",
   },
   {
-    slug: "mtn-episode-1",
-    title: "MTN Episode 1",
+    slug: "mtn-mama-calls-ep-1",
+    title: "MTN: Mama Calls Ep. 1",
     category: "episodic-lore",
     concept:
       "Serialized ad-cinema for a telecom giant. Recurring characters and an unfolding narrative turn a brand campaign into a story viewers wait to continue.",
@@ -175,8 +175,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-amber-700 via-orange-800 to-rose-900",
   },
   {
-    slug: "drager",
-    title: "Drager",
+    slug: "drager-and-gas-detection",
+    title: "Drager & Gas Detection",
     category: "kinetic-impact",
     concept:
       "A one-off, high-contrast commercial engineered to stop the scrolling finger and embed a product's essence in the subconscious in a single arresting spot.",
@@ -185,8 +185,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-rose-800 via-red-900 to-zinc-900",
   },
   {
-    slug: "enterprise-football",
-    title: "Enterprise Football",
+    slug: "enterprise-insurance-world-cup",
+    title: "Enterprise Home Insurance (World Cup 2026 season)",
     category: "zeitgeist-campaigns",
     concept:
       "Riding the collective aura of the beautiful game. A narrative experience that anchors a brand to the roar of the stands and the heartbeat of the season.",
@@ -195,8 +195,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-teal-800 via-slate-700 to-blue-900",
   },
   {
-    slug: "fan-ice-episode-1",
-    title: "Fan Ice Episode 1",
+    slug: "fan-ice-iceream-zombies",
+    title: "Fanice: Ice cream & Zombies",
     category: "episodic-lore",
     concept:
       "A frozen-dairy series pitched at melting point. Condensation, colour and craving rendered in slow, sculptural detail until the last frame leaves you reaching for the freezer.",
@@ -205,8 +205,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-sky-700 via-cyan-800 to-indigo-900",
   },
   {
-    slug: "ideal",
-    title: "Ideal",
+    slug: "ideal-milk-creamy-heist",
+    title: "Ideal Milk : Creamy Heist",
     category: "kinetic-impact",
     concept:
       "Product worship reduced to its cleanest gesture. High-contrast light, deliberate motion and a single promise held on screen long enough to become memory.",
@@ -215,8 +215,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-zinc-700 via-slate-800 to-neutral-900",
   },
   {
-    slug: "polish",
-    title: "Polish",
+    slug: "ipolish",
+    title: "IPolish",
     category: "kinetic-impact",
     concept:
       "A study in surface and gloss. Reflections bend around the product as the camera glides, turning an everyday finish into something worth staring at.",
@@ -225,8 +225,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-fuchsia-800 via-purple-900 to-zinc-900",
   },
   {
-    slug: "cowbell",
-    title: "Cowbell",
+    slug: "cowbell-daddy",
+    title: "Cowbell: Daddy!!!",
     category: "kinetic-impact",
     concept:
       "Warm, familiar, golden. A household staple framed as a small daily ritual, the kind of comfort a whole nation grew up on, dramatised in a single pour.",
@@ -245,8 +245,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-rose-700 via-pink-800 to-violet-900",
   },
   {
-    slug: "gcb-world-cup",
-    title: "GCB World Cup",
+    slug: "gcb-ghana-world-cup",
+    title: "Support for Ghana Black Stars (World Cup 2026 - GCB Bank)",
     category: "zeitgeist-campaigns",
     concept:
       "Anchoring a bank to the fever of the world's biggest tournament. National pride, roaring stands and a brand woven into the collective heartbeat of the season.",
@@ -255,8 +255,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-emerald-800 via-yellow-700 to-red-900",
   },
   {
-    slug: "gcb-fraud",
-    title: "GCB Fraud",
+    slug: "gcb-fraud-awareness",
+    title: "GCB Fraud Awareness",
     category: "episodic-lore",
     concept:
       "A serialized cautionary tale for a bank. An unfolding story dramatises the anatomy of a scam, turning fraud awareness into episodic drama customers actually watch.",
@@ -265,8 +265,8 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-emerald-900 via-slate-800 to-zinc-900",
   },
   {
-    slug: "acacia-edencare",
-    title: "Acacia Edencare",
+    slug: "acacia-health-edencare-campaign",
+    title: "Acacia Health EdenCare campaign",
     category: "kinetic-impact",
     concept:
       "A one-off, high-contrast spot for a healthcare brand. Warmth and clinical precision meet in a single arresting commercial built to embed the promise of care.",
