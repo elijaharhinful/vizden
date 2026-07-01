@@ -19,8 +19,11 @@ export default function Home() {
           className="border-t border-border bg-background py-28 sm:py-36"
         >
           <Reveal className="mx-auto max-w-4xl px-6 text-center sm:px-10">
-            <p className="font-display text-xs font-semibold tracking-[0.35em] text-foreground/60">
-              PHILOSOPHY
+            <p
+              aria-hidden
+              className="pointer-events-none select-none font-display text-4xl font-extrabold tracking-tight text-foreground/10 sm:text-8xl lg:text-9xl"
+            >
+              Philosophy
             </p>
             <PhilosophyText />
           </Reveal>

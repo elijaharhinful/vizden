@@ -132,7 +132,7 @@ export function WorksGrid() {
       {/* Oversized watermark, echoing the sample's ghosted "Portfolio". */}
       <p
         aria-hidden
-        className="pointer-events-none select-none px-6 text-center font-display text-6xl font-extrabold tracking-tight text-foreground/6 sm:text-8xl lg:text-9xl mb-16"
+        className="pointer-events-none select-none px-6 text-center font-display text-6xl font-extrabold tracking-tight text-foreground/10 sm:text-8xl lg:text-9xl mb-16"
       >
         Works
       </p>
