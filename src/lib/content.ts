@@ -78,6 +78,8 @@ export const SEO_KEYWORDS = [
 const VIDEO_BASE = "https://media.vizdenstudios.com/videos";
 // Full-length films live under portfolio/videos in the same bucket.
 const FULL_VIDEO_BASE = "https://media.vizdenstudios.com/portfolio/videos";
+// Poster/thumbnail images for the films live under portfolio/images.
+const POSTER_BASE = "https://media.vizdenstudios.com/portfolio/images";
 
 // Contact runs through WhatsApp. Number digits only (no + or spaces).
 export const WHATSAPP_NUMBER = "233264525811";
@@ -159,6 +161,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "A legacy-preservation film. Neural rendering reconstructs a departed loved one and visualizes their transition into eternal spheres — personal memory turned into a cinematic sanctuary.",
     video: `${FULL_VIDEO_BASE}/Farewell.mp4`,
+    poster: `${POSTER_BASE}/farewell.jpeg`,
     placeholder: "bg-gradient-to-br from-indigo-900 via-violet-800 to-sky-700",
   },
   {
@@ -168,6 +171,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "Serialized ad-cinema for a telecom giant. Recurring characters and an unfolding narrative turn a brand campaign into a story viewers wait to continue.",
     video: `${FULL_VIDEO_BASE}/MTN.mp4`,
+    poster: `${POSTER_BASE}/mtn_ep_1.jpeg`,
     placeholder: "bg-gradient-to-br from-amber-700 via-orange-800 to-rose-900",
   },
   {
@@ -177,6 +181,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "A one-off, high-contrast commercial engineered to stop the scrolling finger and embed a product's essence in the subconscious in a single arresting spot.",
     video: `${FULL_VIDEO_BASE}/DRAGER.mp4`,
+    poster: `${POSTER_BASE}/drager.jpeg`,
     placeholder: "bg-gradient-to-br from-rose-800 via-red-900 to-zinc-900",
   },
   {
@@ -186,6 +191,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "Riding the collective aura of the beautiful game. A narrative experience that anchors a brand to the roar of the stands and the heartbeat of the season.",
     video: `${FULL_VIDEO_BASE}/ENTERPRISE%20FOOTBALL.mp4`,
+    poster: `${POSTER_BASE}/enterprise_football.jpeg`,
     placeholder: "bg-gradient-to-br from-teal-800 via-slate-700 to-blue-900",
   },
   {
@@ -195,6 +201,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "A frozen-dairy series pitched at melting point. Condensation, colour and craving rendered in slow, sculptural detail until the last frame leaves you reaching for the freezer.",
     video: `${FULL_VIDEO_BASE}/FANICE.mp4`,
+    poster: `${POSTER_BASE}/fanice.jpeg`,
     placeholder: "bg-gradient-to-br from-sky-700 via-cyan-800 to-indigo-900",
   },
   {
@@ -204,6 +211,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "Product worship reduced to its cleanest gesture. High-contrast light, deliberate motion and a single promise held on screen long enough to become memory.",
     video: `${FULL_VIDEO_BASE}/IDEAL.mp4`,
+    poster: `${POSTER_BASE}/ideal.jpeg`,
     placeholder: "bg-gradient-to-br from-zinc-700 via-slate-800 to-neutral-900",
   },
   {
@@ -213,6 +221,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "A study in surface and gloss. Reflections bend around the product as the camera glides, turning an everyday finish into something worth staring at.",
     video: `${FULL_VIDEO_BASE}/Ipolish.mp4`,
+    poster: `${POSTER_BASE}/polish.jpeg`,
     placeholder: "bg-gradient-to-br from-fuchsia-800 via-purple-900 to-zinc-900",
   },
   {
@@ -222,6 +231,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "Warm, familiar, golden. A household staple framed as a small daily ritual, the kind of comfort a whole nation grew up on, dramatised in a single pour.",
     video: `${FULL_VIDEO_BASE}/cowbell.mp4`,
+    poster: `${POSTER_BASE}/cowbell.jpeg`,
     placeholder: "bg-gradient-to-br from-amber-600 via-orange-700 to-yellow-900",
   },
   {
@@ -231,6 +241,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "An experiment in rhythm and shape. Playful, kinetic and unbound by a brief, built to prove how far generative motion can push a single idea.",
     video: `${FULL_VIDEO_BASE}/wumple.mp4`,
+    poster: `${POSTER_BASE}/wumple.jpeg`,
     placeholder: "bg-gradient-to-br from-rose-700 via-pink-800 to-violet-900",
   },
   {
@@ -240,7 +251,28 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     concept:
       "Anchoring a bank to the fever of the world's biggest tournament. National pride, roaring stands and a brand woven into the collective heartbeat of the season.",
     video: `${FULL_VIDEO_BASE}/GCB_worldcup.mp4`,
+    poster: `${POSTER_BASE}/gcb_world_cup.jpeg`,
     placeholder: "bg-gradient-to-br from-emerald-800 via-yellow-700 to-red-900",
+  },
+  {
+    slug: "gcb-fraud",
+    title: "GCB Fraud",
+    category: "episodic-lore",
+    concept:
+      "A serialized cautionary tale for a bank. An unfolding story dramatises the anatomy of a scam, turning fraud awareness into episodic drama customers actually watch.",
+    video: `${FULL_VIDEO_BASE}/GCB_FRAUD_40k.mp4`,
+    poster: `${POSTER_BASE}/gcb_fraud.jpeg`,
+    placeholder: "bg-gradient-to-br from-emerald-900 via-slate-800 to-zinc-900",
+  },
+  {
+    slug: "acacia-edencare",
+    title: "Acacia Edencare",
+    category: "kinetic-impact",
+    concept:
+      "A one-off, high-contrast spot for a healthcare brand. Warmth and clinical precision meet in a single arresting commercial built to embed the promise of care.",
+    video: `${FULL_VIDEO_BASE}/ACACIA%20EDENCARE_60k.mp4`,
+    poster: `${POSTER_BASE}/edencare.jpeg`,
+    placeholder: "bg-gradient-to-br from-emerald-700 via-teal-800 to-slate-900",
   },
 ];
 
