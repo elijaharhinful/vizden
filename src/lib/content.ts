@@ -283,7 +283,7 @@ export const PHILOSOPHY_CHAPTERS: PhilosophyChapter[] = [
     index: "03",
     title: "Enter the Den",
     body: "This is our home now. We have reclaimed our sovereignty. The monstrous concepts that once terrified the independent dreamer - for fear of budgets, time, and labor - are the very ones we now espouse. We don’t just handle these wild beasts; we tame them, pet them, and ride them victoriously to the screen.",
-    video: `${VIDEO_BASE}/2.%20THe%20revolution.mp4`,
+    video: `${VIDEO_BASE}/3.riding_the_lion.mp4`,
     side: "left",
     coda: ["We are VizDen Studios.", "We ride the lion."],
   },
