@@ -4,13 +4,18 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { ThumbsUp, Share2, Check, Play } from "lucide-react";
-import { WORK_CATEGORIES, whatsappUrl, type WorkCategory } from "@/lib/content";
+import {
+  WORKS_PLAYLIST,
+  whatsappUrl,
+  workCategoryTitle,
+  type WorkFilm,
+} from "@/lib/content";
 import { Reveal } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
 
 const SHARE_TEXT = "Watch the VizDen Studios works.";
 
-function Thumbnail({ work }: { work: WorkCategory }) {
+function Thumbnail({ work }: { work: WorkFilm }) {
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-lg">
       {work.poster ? (
@@ -32,22 +37,22 @@ function Thumbnail({ work }: { work: WorkCategory }) {
 }
 
 export function WorksWatch() {
-  // The active clip is driven by /works?v=<slug> (set by the homepage cards and
-  // the rail), so it is shareable and the back button works.
+  // The active clip is driven by /works?v=<slug>. The homepage cards pass a
+  // category slug (e.g. "kinetic-impact") and the rail passes a film slug, so we
+  // resolve a film first, then fall back to the category's headline film.
   const searchParams = useSearchParams();
   const router = useRouter();
   const requested = searchParams.get("v");
-  const activeSlug =
-    requested && WORK_CATEGORIES.some((w) => w.slug === requested)
-      ? requested
-      : WORK_CATEGORIES[0].slug;
 
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const active =
-    WORK_CATEGORIES.find((w) => w.slug === activeSlug) ?? WORK_CATEGORIES[0];
-  const queue = WORK_CATEGORIES.filter((w) => w.slug !== active.slug);
+    (requested
+      ? (WORKS_PLAYLIST.find((w) => w.slug === requested) ??
+        WORKS_PLAYLIST.find((w) => w.category === requested))
+      : undefined) ?? WORKS_PLAYLIST[0];
+  const queue = WORKS_PLAYLIST.filter((w) => w.slug !== active.slug);
 
   function selectWork(slug: string) {
     router.push(`/works?v=${slug}`, { scroll: false });
@@ -104,7 +109,10 @@ export function WorksWatch() {
             />
           </div>
 
-          <h1 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-3xl">
+          <span className="mt-5 inline-flex items-center rounded-full bg-brand px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-foreground">
+            {workCategoryTitle(active.category)}
+          </span>
+          <h1 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-3xl">
             {active.title}
           </h1>
 
@@ -155,7 +163,7 @@ export function WorksWatch() {
           <div className="mt-4 rounded-xl bg-secondary/60 p-4 text-sm">
             <p className="flex items-center gap-3 text-xs font-medium tracking-[0.18em] text-foreground/70">
               <span className="h-px w-6 bg-brand" />
-              {active.kicker}
+              {workCategoryTitle(active.category)}
             </p>
             <p
               className={cn(
@@ -198,8 +206,8 @@ export function WorksWatch() {
                     <p className="mt-1 text-xs text-foreground/55">
                       VizDen Studios
                     </p>
-                    <p className="mt-0.5 truncate text-[11px] tracking-[0.14em] text-foreground/40">
-                      {work.kicker}
+                    <p className="mt-0.5 truncate text-[11px] uppercase tracking-[0.14em] text-brand/80">
+                      {workCategoryTitle(work.category)}
                     </p>
                   </div>
                 </button>

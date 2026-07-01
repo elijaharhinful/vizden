@@ -28,7 +28,7 @@ function ChapterVideo({ chapter }: { chapter: PhilosophyChapter }) {
   }, []);
 
   return (
-    <div className="group relative aspect-square overflow-hidden border border-border">
+    <div className="group relative aspect-square overflow-hidden">
       <video
         ref={videoRef}
         src={chapter.video}
@@ -83,7 +83,7 @@ function Chapter({ chapter }: { chapter: PhilosophyChapter }) {
 
 export function PhilosophyManifesto() {
   return (
-    <section id="philosophy" className="relative bg-background py-28 sm:py-36">
+    <section id="philosophy" className="relative bg-black py-28 sm:py-36">
       {/* Ghosted watermark, echoing the works and homepage section headers. */}
       <p
         aria-hidden
