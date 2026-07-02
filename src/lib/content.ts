@@ -216,7 +216,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
   },
   {
     slug: "ipolish",
-    title: "IPolish",
+    title: "iPolish",
     category: "kinetic-impact",
     concept:
       "A study in surface and gloss. Reflections bend around the product as the camera glides, turning an everyday finish into something worth staring at.",
