@@ -265,6 +265,16 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-emerald-900 via-slate-800 to-zinc-900",
   },
   {
+    slug: "enterprise-insurance-heros-dawn",
+    title: "Enterprise Insurance : Hero's Dawn",
+    category: "episodic-lore",
+    concept:
+      "A superhero rises for an insurance brand. When a vehicle full of commuters slips toward the edge of a collapsing suspension bridge, Mr Enterprise catches them mid-fall. Coverage rendered as mythology: the promise that someone is always there to break your worst landing.",
+    video: `${FULL_VIDEO_BASE}/Mr%20Enterprise_FULL.mp4`,
+    poster: `${POSTER_BASE}/mr_enterprise.jpeg`,
+    placeholder: "bg-gradient-to-br from-sky-800 via-blue-900 to-red-900",
+  },
+  {
     slug: "acacia-health-edencare-campaign",
     title: "Acacia Health EdenCare campaign",
     category: "kinetic-impact",
