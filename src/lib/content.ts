@@ -275,6 +275,16 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-sky-800 via-blue-900 to-red-900",
   },
   {
+    slug: "enterprise-insurance-digital-escape",
+    title: "Enterprise Insurance : The Digital Escape",
+    category: "kinetic-impact",
+    concept:
+      "Sweat beads at a police checkpoint. A driver's windscreen is missing a valid insurance sticker and the officer is already walking over. Then it clicks: Enterprise renews your vehicle cover in seconds, right inside the mobile app. Panic dissolves into a tap, and the barrier lifts. A high-contrast spot that turns a moment of dread into the cleanest possible proof of a promise kept.",
+    video: `${FULL_VIDEO_BASE}/POLICE_AFFAIR_ENTERPRISE.mp4`,
+    poster: `${POSTER_BASE}/police_affairs_enterprise.jpeg`,
+    placeholder: "bg-gradient-to-br from-blue-800 via-slate-900 to-zinc-900",
+  },
+  {
     slug: "acacia-health-edencare-campaign",
     title: "Acacia Health EdenCare campaign",
     category: "kinetic-impact",
