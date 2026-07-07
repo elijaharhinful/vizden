@@ -169,17 +169,17 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "MTN: Mama Calls Ep. 1",
     category: "episodic-lore",
     concept:
-      "Serialized ad-cinema for a telecom giant. Recurring characters and an unfolding narrative turn a brand campaign into a story viewers wait to continue.",
+      "An MTN network engineer is stationed on the moon, holding the signal against an alien siege, when his mother phones mid-battle with a request that could not wait. Episode one of a running comedy where mama always calls at the worst possible moment, sometimes wrecking the mission, sometimes accidentally saving it.",
     video: `${FULL_VIDEO_BASE}/MTN.mp4`,
     poster: `${POSTER_BASE}/mtn_ep_1.jpeg`,
     placeholder: "bg-gradient-to-br from-amber-700 via-orange-800 to-rose-900",
   },
   {
     slug: "drager-and-gas-detection",
-    title: "Drager & Gas Detection",
+    title: " Drager (Gas detection) : When Fishes fart",
     category: "kinetic-impact",
     concept:
-      "A one-off, high-contrast commercial engineered to stop the scrolling finger and embed a product's essence in the subconscious in a single arresting spot.",
+      "It all begins with a fart, and ends somewhere far more serious. This is advertising as sleight of hand, disarming you with the ridiculous before revealing the invisible threats that decide who lives and who does not. Every beat is deliberate, every laugh a setup, positioning Dräger as the guardian the world's most critical industries trust.",
     video: `${FULL_VIDEO_BASE}/DRAGER.mp4`,
     poster: `${POSTER_BASE}/drager.jpeg`,
     placeholder: "bg-gradient-to-br from-rose-800 via-red-900 to-zinc-900",
@@ -189,7 +189,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Enterprise Home Insurance (World Cup 2026 season)",
     category: "zeitgeist-campaigns",
     concept:
-      "Riding the collective aura of the beautiful game. A narrative experience that anchors a brand to the roar of the stands and the heartbeat of the season.",
+      "One shot, and the ball exits the atmosphere. While the world watches it re-enter for the winner, Enterprise makes its case for what stays earthbound, your home and your car, covered through every roar of the season. Spectacle above, security beneath. Enterprise. Your advantage.",
     video: `${FULL_VIDEO_BASE}/ENTERPRISE%20FOOTBALL.mp4`,
     poster: `${POSTER_BASE}/enterprise_football.jpeg`,
     placeholder: "bg-gradient-to-br from-teal-800 via-slate-700 to-blue-900",
@@ -199,7 +199,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Fanice: Ice cream & Zombies",
     category: "episodic-lore",
     concept:
-      "A frozen-dairy series pitched at melting point. Condensation, colour and craving rendered in slow, sculptural detail until the last frame leaves you reaching for the freezer.",
+      "A campfire, wide-eyed kids, and Uncle David's origin story: the night FanIce saved his life. A midnight raid on the freezer turns to horror when a zombie crawls out of the TV screen, and the only weapon in reach is a tub of ice cream. A brand claim dressed as folklore: some cravings even the dead cannot resist.",
     video: `${FULL_VIDEO_BASE}/FANICE.mp4`,
     poster: `${POSTER_BASE}/fanice.jpeg`,
     placeholder: "bg-gradient-to-br from-sky-700 via-cyan-800 to-indigo-900",
@@ -209,7 +209,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Ideal Milk : Creamy Heist",
     category: "kinetic-impact",
     concept:
-      "Product worship reduced to its cleanest gesture. High-contrast light, deliberate motion and a single promise held on screen long enough to become memory.",
+      "A squad of ants runs a military-grade heist on a can of Ideal Milk, only for the mission to stall mid-lift. The tin is heavier than the intel promised: same konko(tin), more milk inside. What plays as slapstick is really a product claim in disguise, the extra grams so real it takes reinforcements to carry them off. Ideal Milk.",
     video: `${FULL_VIDEO_BASE}/IDEAL.mp4`,
     poster: `${POSTER_BASE}/ideal.jpeg`,
     placeholder: "bg-gradient-to-br from-zinc-700 via-slate-800 to-neutral-900",
@@ -219,7 +219,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "iPolish",
     category: "kinetic-impact",
     concept:
-      "A study in surface and gloss. Reflections bend around the product as the camera glides, turning an everyday finish into something worth staring at.",
+      "It is not magic, it is the newest tech in town. One wand, over 300 colours, zero mess, replacing the hundred bottles that once buried her. A woman drowning in clutter falls, and lands somewhere lighter, a world where any shade meets any mood in an instant and every restriction of old nail care is stripped away. Prison walls of expression torn down. Trapped? No more.",
     video: `${FULL_VIDEO_BASE}/Ipolish.mp4`,
     poster: `${POSTER_BASE}/polish.jpeg`,
     placeholder: "bg-gradient-to-br from-fuchsia-800 via-purple-900 to-zinc-900",
@@ -229,7 +229,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Cowbell: Daddy!!!",
     category: "kinetic-impact",
     concept:
-      "Warm, familiar, golden. A household staple framed as a small daily ritual, the kind of comfort a whole nation grew up on, dramatised in a single pour.",
+      "A father who has loved Cowbell since he was his daughter's age cannot resist embellishing why, stacking one Superman-style childhood feat on another until mum grounds the whole thing in a bowl of fruit salad and milk. The tall tales are the fun; the nutrition is the promise. Cowbell framed as a family tradition that feeds both the imagination and the child.",
     video: `${FULL_VIDEO_BASE}/cowbell.mp4`,
     poster: `${POSTER_BASE}/cowbell.jpeg`,
     placeholder: "bg-gradient-to-br from-amber-600 via-orange-700 to-yellow-900",
@@ -239,7 +239,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Wumple",
     category: "kinetic-impact",
     concept:
-      "An experiment in rhythm and shape. Playful, kinetic and unbound by a brief, built to prove how far generative motion can push a single idea.",
+      "One fine mist over a bowl of popcorn, and a woman and her dogs lift clean off the ground. The floating is the pitch: Wumple adds an out-of-this-world flavor with none of the grease or weight of melted butter, triggering a total detachment from the real world and launching the snacker into the heights of sensory ecstasy. A hero-product spot where control, zero mess, and even coverage make flavor feel like pure magic. Others snack, some wumple.",
     video: `${FULL_VIDEO_BASE}/wumple.mp4`,
     poster: `${POSTER_BASE}/wumple.jpeg`,
     placeholder: "bg-gradient-to-br from-rose-700 via-pink-800 to-violet-900",
@@ -289,7 +289,7 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     title: "Acacia Health EdenCare campaign",
     category: "kinetic-impact",
     concept:
-      "A one-off, high-contrast spot for a healthcare brand. Warmth and clinical precision meet in a single arresting commercial built to embed the promise of care.",
+      "A one-off, high-contrast spot for a health insurance brand. Warmth and clinical precision meet in a single arresting commercial built to embed the promise of care.",
     video: `${FULL_VIDEO_BASE}/ACACIA%20EDENCARE_60k.mp4`,
     poster: `${POSTER_BASE}/edencare.jpeg`,
     placeholder: "bg-gradient-to-br from-emerald-700 via-teal-800 to-slate-900",
