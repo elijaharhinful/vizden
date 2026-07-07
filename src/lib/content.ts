@@ -275,6 +275,16 @@ export const WORKS_PLAYLIST: WorkFilm[] = [
     placeholder: "bg-gradient-to-br from-sky-800 via-blue-900 to-red-900",
   },
   {
+    slug: "enterprise-insurance-eto-wo-a-da-part-1",
+    title: "Enterprise Insurance : If it happens, chill! - Part 1",
+    category: "episodic-lore",
+    concept:
+      "DJ E takes to Enterprise Blue FM with a dare: name the calmest person in Ghana after the floods swallowed everything. Every caller lands on Mansa, serene on her balcony with a cup of tea while brown water drowns her home and her car below. She will not flinch. Everything is under control. The reveal is punchline and promise at once, Enterprise agents already wading through her living room, already inspecting the car, already turning catastrophe into paperwork. Eto wo a, da. If it happens, chill. Insurance sold not as a hedge against ruin but as the licence to stay unbothered while your world goes under. Your advantage. Part one.",
+    video: `${FULL_VIDEO_BASE}/ENTERPRISE_FULL_ETO_WO_AA_DA.mp4`,
+    poster: `${POSTER_BASE}/ENTERPRISE_FULL_ETO_WO_AA_DA.jpeg`,
+    placeholder: "bg-gradient-to-br from-amber-900 via-slate-800 to-blue-900",
+  },
+  {
     slug: "enterprise-insurance-digital-escape",
     title: "Enterprise Insurance : The Digital Escape",
     category: "kinetic-impact",
